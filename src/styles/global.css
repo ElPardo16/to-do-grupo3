@@ -3,3 +3,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root{
+  --acent: #FE6211;
+}
+
+header{
+  height: 100px;
+  background-color: var(--acent);
+  display: grid;
+  place-items: center;
+}
+
+header img {
+  height: 100px;
+}
