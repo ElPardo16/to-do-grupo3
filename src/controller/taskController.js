@@ -7,3 +7,11 @@ export const saveTask = async taskReq => {
     await task.save()
 }
 export const deleteTask = async id => await Task.findByIdAndDelete(id)
+
+export const updateTask = async (id,data) => {
+
+    const old =  await Task.findById(id)
+    old.updates.push(this)
+    data.updates = old
+    return await Task.findByIdAndUpdate(id, data, {new:true})
+}
