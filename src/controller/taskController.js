@@ -6,3 +6,4 @@ export const saveTask = async taskReq => {
     const task = new Task(taskReq)
     await task.save()
 }
+export const deleteTask = async id => await Task.findByIdAndDelete(id)
