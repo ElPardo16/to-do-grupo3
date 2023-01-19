@@ -1,9 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Card from '../components/Card'
 import Form from '../components/Form'
 import Header from '../components/Header'
 
 export default function Home() {
+
+  
+
   return (
     <div className='app'>
       <Head>
@@ -15,6 +19,8 @@ export default function Home() {
       <main>
 
         <Form/>
+        <Card title='hola andres' />
+        <Card title='hola andres' type={0}/>
       </main>
       
     </div>

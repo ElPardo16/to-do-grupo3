@@ -17,14 +17,14 @@ export default async function  handler(req, res) {
         console.log(error);
         return res.status(400).json({
           msg:"error"
-       })
+        })
       }
       break
     case "DELETE":
       try {
-         const { id } = req.query 
-         const deleted = await deleteTask(id)
-         return res.status(200).json({
+          const { id } = req.query 
+          const deleted = await deleteTask(id)
+          return res.status(200).json({
             msg:"Tarea Borrada",
             deleted 
          })
