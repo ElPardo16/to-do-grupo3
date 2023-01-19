@@ -12,7 +12,7 @@ const taskSchema = Schema({
     },
     status: {
         type: Number,
-        require: true
+        default: 0
     }
 },{
     versionKey: false

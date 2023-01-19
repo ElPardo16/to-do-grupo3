@@ -18,3 +18,41 @@ header{
 header img {
   height: 100px;
 }
+
+main{
+  padding: 40px 30px;
+}
+
+form{
+  display: grid;
+  grid: min-content 60px/ 1fr 1fr;
+  gap: 15px;
+  font-size: 1.2rem;
+}
+
+form div{
+ display: grid;
+ grid: 1fr / 1fr  80px ;
+ grid-column: span 2;
+ gap: 10px;
+}
+
+form label{
+  justify-self: end;
+}
+form input{
+  border-radius: 10px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+
+form button{
+  background: var(--acent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.delete{
+  font-size: 1.4rem;
+  color: var(--acent);
+}
