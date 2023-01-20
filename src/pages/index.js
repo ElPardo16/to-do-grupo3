@@ -3,13 +3,16 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Card from '../components/Card'
 import Form from '../components/Form'
+import React, {useState} from 'react'
 import Header from '../components/Header'
+import ListTask  from '../components/ListTask'
+import Modal from '../components/Modal'
 
 export default function Home({listTask}) {
 
   const [tasks, setTasks] = useState(listTask)
+  const [show, setShow] = useState(false)
 
-  console.log(listTask)
 
   return (
     <div className='app'>
@@ -21,11 +24,14 @@ export default function Home({listTask}) {
       <Header/>
       <main>
 
-        <Form/>
+        <Form funModal={setShow}/>
+        <ListTask tasks={[]}/>
         <Card title='hola andres' />
         <Card title='hola andres' type={0}/>
+
       </main>
-      
+
+      {show && <Modal funModal={setShow}/> }
     </div>
   )
 }

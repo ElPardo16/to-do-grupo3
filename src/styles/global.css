@@ -77,3 +77,38 @@ form button{
   font-weight: bold;
   padding-right: 5px;
 }
+
+.list{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap:20px;
+  padding: 20px;
+}
+
+/**-----Modal------**/
+.bg{
+background: rgba(0, 0, 0, .7);
+position: fixed;
+inset: 0;
+margin: auto;
+width: 100vw;
+height: 100vh; 
+}
+.modal{
+   position: absolute;
+   inset: 0;
+   margin: auto;
+   width:60%;
+   height: 80%;
+   background: #D9D9D9;
+   border-radius: 20px;
+   padding:30px;
+   display: grid;
+   grid: min-content 1fr /1fr;
+}
+.modal div{
+   display: grid;
+   grid: 1fr/90% 1fr;
+   place-items: center;
+}
