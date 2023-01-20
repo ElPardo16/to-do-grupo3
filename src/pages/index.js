@@ -24,9 +24,7 @@ export default function Home({listTask}) {
       <main>
 
         <Form funModal={setShow}/>
-        <ListTask tasks={[]}/>
-        <Card title='hola andres' />
-        <Card title='hola andres' type={0}/>
+        <ListTask tasks={tasks}/>
 
       </main>
 

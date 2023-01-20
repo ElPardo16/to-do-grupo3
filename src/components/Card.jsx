@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import React, { useEffect, useRef, useState } from 'react'
 import {MdOutlineDelete, MdCropSquare, MdOutlineDoneOutline} from 'react-icons/md'
 
-const Card = ({title, type = 1}) => {
+const Card = ({task: {title}, type = 1}) => {
   const [check, setCheck] = useState(false)
   const pRef = useRef(null)
   const checkHandler = _ => {

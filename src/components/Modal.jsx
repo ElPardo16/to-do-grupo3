@@ -3,7 +3,7 @@ import { MdClose } from "react-icons/md";
 import ListTask from './ListTask';
 
 
-function Modal({funModa, tasks}) {
+function Modal({funModal, tasks}) {
   return (
     <div className='bg'>
 
