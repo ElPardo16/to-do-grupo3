@@ -46,8 +46,8 @@ const Card = ({title, type = 1}) => {
 
   return (
     <div className='card' onDoubleClick={dcHandler}>
-        {type===0 && ( check ? <MdOutlineDoneOutline size={40}/> : <MdCropSquare onClick={checkHandler} size={40}/> )}
         <p ref={pRef} onBlur={saveData} onKeyDown={enterHandler}></p>
+        {type===0 && ( check ? <MdOutlineDoneOutline size={40}/> : <MdCropSquare onClick={checkHandler} size={40}/> )}
         {type===0 && <MdOutlineDelete size={40}/>}
     </div>
   )

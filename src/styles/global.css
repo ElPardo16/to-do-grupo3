@@ -5,13 +5,15 @@
 }
 
 :root{
-  --acent: #FE6211;
-  --gris: #878E76;
+  --accent: #FE6211;
+  --gray: #878E76;
 }
-
+svg, button{
+  cursor: pointer;
+}
 header{
   height: 100px;
-  background-color: var(--acent);
+  background-color: var(--accent);
   display: grid;
   place-items: center;
 }
@@ -28,7 +30,7 @@ form{
   display: grid;
   grid: min-content 60px/ 1fr 1fr;
   gap: 15px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 form div{
@@ -49,22 +51,22 @@ form input{
 }
 
 form button{
-  background: var(--acent);
+  background: var(--accent);
   color: white;
   border: none;
   border-radius: 10px;
 }
 .delete{
-  font-size: 1.4rem;
-  color: var(--acent);
+  color: var(--accent);
+  cursor: pointer;
 }
 
 .card{
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 10px;
-  background-color: var(--gris) ;
+  background-color: var(--gray) ;
   border-radius: 10px;
   color: white;
   align-items: center;
@@ -107,7 +109,10 @@ height: 100vh;
    display: grid;
    grid: min-content 1fr /1fr;
 }
-.modal div{
+.modal .list{
+  padding: 50px 30px 30px;
+}
+.modal > div:first-of-type{
    display: grid;
    grid: 1fr/90% 1fr;
    place-items: center;

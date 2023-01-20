@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
-export const ListTask = ({tasks, type=0}) => {
+export default function ListTask ({tasks, type = 0}){
   return (
     <div className='list'>
         {tasks.filter(({status})=>status===type)
