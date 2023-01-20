@@ -1,6 +1,5 @@
 import { deleteTask, updateTask } from "../../../controller/taskController"
 import connection from "../../../db/connection"
-import Task from "../../../models/Task"
 
 export default async function  handler(req, res) {
     const { id } = req.query
@@ -16,13 +15,11 @@ export default async function  handler(req, res) {
       } catch (error) {
         console.log(error);
         return res.status(400).json({
-          msg:"error"
+          msg: `Error: ${error.message}`,
         })
       }
-      break
     case "DELETE":
       try {
-          const { id } = req.query 
           const deleted = await deleteTask(id)
           return res.status(200).json({
             msg:"Tarea Borrada",
@@ -31,12 +28,9 @@ export default async function  handler(req, res) {
       } catch (error) {
          console.log(error)
          return res.status(400).json({
-            msg:"error"
+            msg: `Error: ${error.message}`
          })
          
       }
-      break
   }
-
-  Task.find()
 }

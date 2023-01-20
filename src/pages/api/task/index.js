@@ -1,6 +1,5 @@
 import { getTask, saveTask } from "../../../controller/taskController"
 import connection from "../../../db/connection"
-import Task from "../../../models/Task"
 
 export default async function handler(req, res) {
   connection()
@@ -12,12 +11,11 @@ export default async function handler(req, res) {
         
       } catch (error) {
         console.log(error)
-        res.status(400).json({
-          msg: "error"
+        return res.status(400).json({
+          msg: `Error: ${error.message}`
         })
       }
       
-      break
     case "POST":
       try {
         await saveTask(req.body)
@@ -27,12 +25,9 @@ export default async function handler(req, res) {
         })
       } catch (error) {
         console.log(error)
-        res.status(400).json({
-          msg: "error"
+        return res.status(400).json({
+          msg: `Error: ${error.message}`
         })
       }
-      break
   }
-
-  Task.find()
 }

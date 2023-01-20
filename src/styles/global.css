@@ -45,6 +45,7 @@ form input{
   border-radius: 10px;
   padding-left: 20px;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 form button{
@@ -67,10 +68,12 @@ form button{
   border-radius: 10px;
   color: white;
   align-items: center;
+  transform-origin: center left;
 }
 
 .card p{
   margin-right: auto;
   font-size: 1.4rem;
   font-weight: bold;
+  padding-right: 5px;
 }
