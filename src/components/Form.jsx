@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {MdAdd} from 'react-icons/md'
 
-function Form() {
+function Form({funModal}) {
     const [title, setTitle] = useState('')
     
     const clickHandler = async e=> { 
@@ -21,7 +21,7 @@ function Form() {
     }
   return (
     <form action="">
-        <p className='delete'>Eliminadas</p>
+        <p className='delete' onClick={_ => void funModal(true) }>Eliminadas</p>
         <label htmlFor="title">Crear Tarea</label>
         <div>
             <input type="text" name="title" placeholder='Tarea' onChange={ e=> void setTitle(e.target.value)} />
