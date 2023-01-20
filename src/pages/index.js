@@ -1,17 +1,28 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Card from '../components/Card'
 import Form from '../components/Form'
 import Header from '../components/Header'
 import ListTask  from '../components/ListTask'
 import Modal from '../components/Modal'
+import { setTask } from '../utils/taskSlice'
+import { getData } from '../utils/tools'
 
 export default function Home({listTask}) {
 
-  const [tasks, setTasks] = useState(listTask)
+  const tasks = useSelector(state => state.task.listT) 
   const [show, setShow] = useState(false)
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    dispatch(setTask(listTask))
+  },[])
 
+  /* useEffect(() => {
+    dispatch(setTask(listTask))
+  },[tasks]) */
 
   return (
     <div className='app'>
@@ -35,8 +46,7 @@ export default function Home({listTask}) {
 
 export async function getServerSideProps() {
   try {
-    const response = await fetch('http://127.0.0.1:3000/api/task')
-    const json = await response.json()
+    const json = await getData()
     return {
       props:{
         listTask:json
