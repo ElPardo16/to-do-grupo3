@@ -77,3 +77,11 @@ form button{
   font-weight: bold;
   padding-right: 5px;
 }
+
+.list{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap:20px;
+  padding: 20px;
+}
