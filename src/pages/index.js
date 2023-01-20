@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { useState } from 'react'
 import Card from '../components/Card'
 import Form from '../components/Form'
-import React, {useState} from 'react'
 import Header from '../components/Header'
 import ListTask  from '../components/ListTask'
 import Modal from '../components/Modal'
@@ -31,7 +30,7 @@ export default function Home({listTask}) {
 
       </main>
 
-      {show && <Modal funModal={setShow}/> }
+      {show && <Modal funModal={setShow} tasks={tasks}/> }
     </div>
   )
 }

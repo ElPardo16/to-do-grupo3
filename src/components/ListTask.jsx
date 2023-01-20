@@ -1,11 +1,13 @@
 import React from 'react'
 import Card from './Card'
 
-export const ListTask = ({tasks, type=0}) => {
+export default function ListTask ({tasks, type=0}){
+  const filterTask = tasks.filter(({status})=>status===type)
   return (
     <div className='list'>
-        {tasks.filter(({status})=>status===type)
-            .map(({title})=><Card title={title} type={type}/> )
+        {
+          filterTask !== [] ? filterTask.map(({title})=><Card title={title} type={type}/>)
+          :<h2>Vacio</h2>
         }
 
     <Card title="title" type={0}/>

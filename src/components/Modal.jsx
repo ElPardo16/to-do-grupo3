@@ -3,7 +3,7 @@ import { MdClose } from "react-icons/md";
 import  ListTask  from './ListTask';
 
 
-function Modal({funModal}) {
+function Modal({funModa, tasks}) {
   return (
     <div className='bg'>
      
@@ -12,7 +12,7 @@ function Modal({funModal}) {
          <h1>Tareas Eliminadas</h1> 
          <MdClose size={40} onClick={_ => void funModal(false) }/>
       </div>
-      <ListTask tasks={[]} type={2}/>
+      <ListTask tasks={tasks} type={2}/>
       </div>
    </div>
    
