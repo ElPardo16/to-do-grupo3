@@ -1,4 +1,4 @@
 export async function getData () {
-    const response = await fetch('http://localhost:3000/api/task')
+    const response = await fetch('https://to-do-grupo3.netlify.app/api/task')
     return await response.json()
 }
