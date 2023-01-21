@@ -1,3 +1,4 @@
+import gsap, { Expo } from "gsap";
 import React, { useRef, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
@@ -8,24 +9,37 @@ function Form({ funModal }) {
   const [title, setTitle] = useState("");
   const inputRef = useRef(null)
   const dispatch = useDispatch();
-  const clickHandler = async (e) => {
+  const clickHandler = async e => {
     e.preventDefault();
-    const res = await fetch("/api/task", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-      }),
-    });
-    const json = await res.json();
-    console.log(json);
-    const newList = await getData();
-    dispatch(setTask(newList));
-    inputRef.current.value = ""
-    
+    if (inputRef.current.value !== "") {
+      const res = await fetch("/api/task", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title,
+        }),
+      });
+      const json = await res.json();
+      console.log(json);
+      const newList = await getData();
+      dispatch(setTask(newList));
+      inputRef.current.value = ""
+    }else{
+      const tl = gsap.timeline({
+        duration: .05,
+        yoyo: true,
+        repeat: 1,
+      })
+      tl.to(inputRef.current,{
+        borderColor: "red",
+        borderWidth: 3,
+        ease: Expo.easeOut
+      })
+      console.log("No hay datos")
+    }
   };
   return (
     <form action="">

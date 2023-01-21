@@ -12,7 +12,7 @@ function Modal({funModal, tasks}) {
           <h1>Tareas Eliminadas</h1>
           <MdClose size={40} onClick={_ => void funModal(false)} />
         </div>
-        <ListTask tasks={tasks} type={2} />
+        <ListTask tasks={tasks} type={2} txt="eliminadas" />
       </div>
     </div>
 

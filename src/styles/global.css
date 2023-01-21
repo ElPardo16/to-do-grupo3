@@ -64,7 +64,11 @@ form button{
   color: var(--accent);
   cursor: pointer;
 }
-
+section{
+  padding: 30px 0;
+  display: grid;
+  gap: 30px;
+}
 .card{
   padding: 10px 20px;
   display: flex;
@@ -74,22 +78,27 @@ form button{
   border-radius: 10px;
   color: white;
   align-items: center;
-  transform-origin: center left;
+  /* transform-origin: center left; */
 }
-
+.check{
+  background: var(--accent);
+  text-decoration: line-through;
+}
 .card p{
   margin-right: auto;
   font-size: 1.4rem;
   font-weight: bold;
   padding-right: 5px;
 }
-
+.con_list{
+  text-align: center;
+}
 .list{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap:20px;
-  padding: 20px;
+  gap: 20px;
+  padding: 20px 0;
 }
 
 /**-----Modal------**/
@@ -105,7 +114,7 @@ height: 100vh;
    position: absolute;
    inset: 0;
    margin: auto;
-   width:60%;
+   width:90%;
    height: 80%;
    background: #D9D9D9;
    border-radius: 20px;
@@ -114,7 +123,7 @@ height: 100vh;
    grid: min-content 1fr /1fr;
 }
 .modal .list{
-  padding: 50px 30px 30px;
+  padding: 50px 0 30px;
 }
 .modal > div:first-of-type{
    display: grid;
@@ -123,6 +132,12 @@ height: 100vh;
 }
 
 .list h2{
-  text-align: center;
   opacity: 0.7;
+}
+
+/*Media Querys*/
+@media (min-width: 1000px) {
+  section{
+    grid: 1fr / 60% 1fr;
+  }
 }
