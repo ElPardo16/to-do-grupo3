@@ -1,6 +1,8 @@
 import { deleteTask, updateTask } from "../../../controller/taskController"
 import connection from "../../../db/connection"
 
+// Only the object containing the id property obtained from the URL can be updated or deleted. 
+
 export default async function  handler(req, res) {
     const { id } = req.query
   connection()

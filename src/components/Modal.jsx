@@ -2,6 +2,7 @@ import React from 'react'
 import { MdClose } from "react-icons/md";
 import ListTask from './ListTask';
 
+// loads the list of deleted tasks from the database 
 
 function Modal({funModal, tasks}) {
   return (

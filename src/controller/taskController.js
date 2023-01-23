@@ -1,5 +1,7 @@
 import Task from "../models/Task"
-
+// contains the 4 main functions getTask fetches the tasks from 
+// the database, saveTask saves the data, deleteTask deletes the 
+// tasks and updateTask is that which loads our tasks to the database 
 export const getTask = async _ => await Task.find()
 
 export const saveTask = async taskReq => {
