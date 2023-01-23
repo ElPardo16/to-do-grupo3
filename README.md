@@ -68,3 +68,34 @@ Método POST
         });
         const json = await res.json();
 
+
+## MONGOOSE
+
+Usamos mongoose para el modelado de datos y para realizar las operaciones del CRUD.
+
+
+        const taskSchema = Schema({
+            title: {
+                type: String,
+                maxLength: 50,
+                require: true
+            },
+            updates: {
+                type: Array,
+                default: []
+            },
+            status: {
+                type: Number,
+                default: 0
+            }
+        },{
+            versionKey: false
+        })
+
+
+
+
+ Ejemplo de como obtenemos los datos de nuestra Data base: 
+
+
+           Task.find()
