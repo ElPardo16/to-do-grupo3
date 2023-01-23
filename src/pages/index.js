@@ -53,6 +53,9 @@ export default function Home({ listTask }) {
   )
 }
 
+// fetches data at the server level, gets the data and sends
+// it to the front end as a prop but rendered. 
+
 export async function getServerSideProps() {
   try {
     const json = await getData()

@@ -18,6 +18,7 @@ Las tecnologías que usamos para desarrollar el proyecto fueron:
 - Netlify - Despliegue
 - Postman - Testeo de API rest
 - Gsap  - Librería para animaciones 
+- Redux  - Librería para manejar el estado global 
 
 
 

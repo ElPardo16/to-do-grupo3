@@ -9,6 +9,12 @@ function Form({ funModal }) {
   const [title, setTitle] = useState("");
   const inputRef = useRef(null)
   const dispatch = useDispatch();
+
+  // makes a post request to save the data and redraws the task list to make it 
+  // look updated, the conditional is to validate that the form is not empty, 
+  // runs an animation that places the red border as a warning that it must be 
+  // filled in. 
+  
   const clickHandler = async e => {
     e.preventDefault();
     if (inputRef.current.value !== "") {

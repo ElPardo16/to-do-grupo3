@@ -1,6 +1,8 @@
 import { getTask, saveTask } from "../../../controller/taskController"
 import connection from "../../../db/connection"
 
+// Gets the list from the database or saves the object in the database. 
+
 export default async function handler(req, res) {
   connection()
   switch (req.method) {
