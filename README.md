@@ -24,7 +24,7 @@ Las tecnologías que usamos para desarrollar el proyecto fueron:
 <br/>
 <br/>
 
-<img src='./public/img/img.jpg' width='400px'/>
+<img src='./public/img/tecnologias.png' width='450px'/>
 
 <br/>
 <br/>
